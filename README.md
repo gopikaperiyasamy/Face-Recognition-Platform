@@ -79,7 +79,7 @@ cargo build --release
 ./target/release/qdrant
 
 ```
-### 5. Configure Environment Variables
+ 5. Configure Environment Variables
 ``` bash
 Create a .env file in the project root:
 env
