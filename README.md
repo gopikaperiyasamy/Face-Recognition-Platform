@@ -1,4 +1,4 @@
-![alt text](architexture/image.png)
+![alt text](architecturediagram/image.png)
 
 Core Functionalities
 
