@@ -1,29 +1,28 @@
 # Architexture Diagram :
 ![alt text](architecturediagram/image.png)
 
-# Core Functionalities
+## Core Functionalities
 
-•⁠  ⁠Face Registration: Capture and store webcam images with timestamps in MongoDB.
-•⁠  ⁠Face Encoding & Vectorization: Convert facial images into embeddings using a Pickle-based pipeline and store them in Qdrant.
-•⁠  ⁠Live Recognition: Stream webcam input and recognize registered faces in real-time.
-•⁠  ⁠AI Q&A Interface:Ask semantic questions (e.g., "Who was the last registered person?") using LangChain + OpenAI.
+- **Face Registration:** Capture and store webcam images with timestamps in MongoDB.
+- **Face Encoding & Vectorization:** Convert facial images into embeddings using a Pickle-based pipeline and store them in Qdrant.
+- **Live Recognition:** Stream webcam input and recognize registered faces in real-time.
+- **AI Q&A Interface:** Ask semantic questions (e.g., "Who was the last registered person?") using LangChain + OpenAI.
 
-• Qdrant offers vector search with built-in filtering, payload support, and distributed scalability. Unlike Faiss, it provides a production-ready API with persistent storage and easy deployment.
+**Qdrant** offers vector search with built-in filtering, payload support, and distributed scalability. Unlike Faiss, it provides a production-ready API with persistent storage and easy deployment.
 
- Registration
-•⁠  ⁠Captures webcam images.
-•⁠  ⁠Assigns a user name and stores the image and metadata in MongoDB.
-•⁠  ⁠Converts image to face embeddings and stores in Qdrant DB.
+### Registration
+- Captures webcam images.
+- Assigns a user name and stores the image and metadata in MongoDB.
+- Converts image to face embeddings and stores in Qdrant DB.
 
- Real-Time Recognition
-•⁠  ⁠Reads from webcam.
-•⁠  ⁠Compares live embeddings with stored vectors.
-•⁠  ⁠Displays recognized names with bounding boxes.
+### Real-Time Recognition
+- Reads from webcam.
+- Compares live embeddings with stored vectors.
+- Displays recognized names with bounding boxes.
 
- AI Chat Interface
-•⁠  ⁠Users can ask natural-language questions about the data.
-•⁠  ⁠Uses LangChain, Qdrant, and OpenAI to perform semantic search and answer.
-
+### AI Chat Interface
+- Users can ask natural-language questions about the data.
+- Uses LangChain, Qdrant, and OpenAI to perform semantic search and answer.
 
  ### Tech Stack
 
@@ -115,45 +114,50 @@ The frontend will be available at: http://0.0.0.0:7860
 
 ## API Endpoints
 
-### Backend API Documentation
-Once the backend is running, visit: http://localhost:8000/docs for interactive API documentation.
 
-### Available Endpoints:
-•⁠  ⁠POST /register - Register a new face
-•⁠  ⁠POST /recognize - Recognize a face
-•⁠  ⁠POST /ask - Ask AI questions about registered faces
-•⁠  ⁠GET /faces - List all registered faces
-•⁠  ⁠GET /health - Health check
+### Backend API Documentation
+Once the backend is running, visit: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### Available Endpoints
+- `POST /register` - Register a new face
+- `POST /recognize` - Recognize a face
+- `POST /ask` - Ask AI questions about registered faces
+- `GET /faces` - List all registered faces
+- `GET /health` - Health check
+
+---
 
 ## Usage Guide
 
 ### 1. Register Faces
-•⁠  ⁠Go to the "Register" tab
-•⁠  ⁠Choose capture method (Upload, Camera, or Stream)
-•⁠  ⁠Enter person's name
-•⁠  ⁠Capture/upload image
-•⁠  ⁠Click "Register Face"
+- Go to the **Register** tab
+- Choose capture method (Upload, Camera, or Stream)
+- Enter person's name
+- Capture/upload image
+- Click **Register Face**
 
 ### 2. Recognize Faces
-•⁠  ⁠Go to the "Recognize" tab
-•⁠  ⁠Choose recognition method
-•⁠  ⁠Capture/upload image
-•⁠  ⁠Click "Recognize Face"
-•⁠  ⁠View results with confidence score
+- Go to the **Recognize** tab
+- Choose recognition method
+- Capture/upload image
+- Click **Recognize Face**
+- View results with confidence score
 
 ### 3. Ask AI Questions
-•⁠  ⁠Go to the "Ask AI" tab
-•⁠  ⁠Try sample questions or enter custom ones
-•⁠  ⁠Examples:
-  - "Who was the last person registered?"
-  - "How many people are registered?"
-  - "List all registered people"
-  - "When was John registered?"
+- Go to the **Ask AI** tab
+- Try sample questions or enter custom ones
+
+Examples:
+- "Who was the last person registered?"
+- "How many people are registered?"
+- "List all registered people"
+- "When was John registered?"
 
 ### 4. View Registered Faces
-•⁠  ⁠Go to the "View Faces" tab
-•⁠  ⁠See all registered faces with timestamps
+- Go to the **View Faces** tab
+- See all registered faces with timestamps
 
+---
 
 “This project is a part of a hackathon run by https://katomaran.com ”
 
