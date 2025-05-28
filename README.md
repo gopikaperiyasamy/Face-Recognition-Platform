@@ -6,7 +6,7 @@ Core Functionalities
 - Live Recognition: Stream webcam input and recognize registered faces in real-time.
 - AI Q&A Interface:Ask semantic questions (e.g., "Who was the last registered person?") using LangChain + OpenAI.
 
-
+Qdrant offers vector search with built-in filtering, payload support, and distributed scalability. Unlike Faiss, it provides a production-ready API with persistent storage and easy deployment.
 
  Registration
 - Captures webcam images.
@@ -37,40 +37,118 @@ Core Functionalities
 | Environment       | `.env` (for keys, URIs, config)                 |
 -----------------------------------------------------------------------
 
- Prerequisites
+ 1. Install Dependencies
 
-- Python 3.8+
-- MongoDB (local or cloud URI)
-- Qdrant (run locally or use cloud Qdrant)
-- Webcam
-- OpenAI API key
+pip install -r requirements.txt
 
-requirements.txt
 
-flask
-gradio
-opencv-python
-face_recognition
-langchain
-openai
-qdrant-client
-pymongo
-numpy
-python-dotenv
-tenacity
-3. Configure Environment Variables
-Create a .env file in the root directory:
-OPENAI_API_KEY=your_openai_api_key
-MONGO_URI=mongodb://localhost:27017/face_db
-QDRANT_HOST=http://localhost:6333
-4. Run the Flask Backend
-python backend/backend.py
-6. Launch Gradio UI
-python frontend/Ui_frontend.py
-Visit the Gradio app at: http://localhost:7860
+ 2. Install System Dependencies (Linux/Mac)
+
+# For face_recognition library
+sudo apt-get install cmake
+sudo apt-get install libopenblas-dev liblapack-dev
+sudo apt-get install libx11-dev libgtk-3-dev
+
+# For OpenCV
+sudo apt-get install python3-opencv
+
+ 3. Install and Setup MongoDB
+bash
  
- 
- Architecture diagram
- [](../Untitled.fig)
- 
+sudo apt-get install mongodb
+
+ Start MongoDB service
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+
+ Verify MongoDB is running
+mongo --eval "db.adminCommand('listCollections')"
+
+
+ 4. Install and Setup Qdrant
+bash
+# Using Docker (Recommended)
+docker run -p 6333:6333 qdrant/qdrant
+
+# Or install from source
+git clone https://github.com/qdrant/qdrant.git
+cd qdrant
+cargo build --release
+./target/release/qdrant
+
+
+### 5. Configure Environment Variables
+Create a .env file in the project root:
+env
+OPENAI_API_KEY=your-openai-api-key-here
+MONGODB_URL=mongodb://localhost:27017/
+QDRANT_URL=localhost
+QDRANT_PORT=6333
+
+
+## Running the System
+
+### 1. Start Backend Server
+bash
+# Navigate to backend directory
+python fastapi_backend.py
+
+# Or using uvicorn directly
+uvicorn fastapi_backend:app --host 0.0.0.0 --port 8000 --reload
+
+
+The backend will be available at: http://localhost:8000
+
+### 2. Start Frontend
+bash
+# In a new terminal
+streamlit run streamlit_frontend.py
+
+
+The frontend will be available at: http://localhost:8501
+
+## API Endpoints
+
+### Backend API Documentation
+Once the backend is running, visit: http://localhost:8000/docs for interactive API documentation.
+
+### Available Endpoints:
+- POST /register - Register a new face
+- POST /recognize - Recognize a face
+- POST /ask - Ask AI questions about registered faces
+- GET /faces - List all registered faces
+- GET /health - Health check
+
+## Usage Guide
+
+### 1. Register Faces
+- Go to the "Register" tab
+- Choose capture method (Upload, Camera, or Stream)
+- Enter person's name
+- Capture/upload image
+- Click "Register Face"
+
+### 2. Recognize Faces
+- Go to the "Recognize" tab
+- Choose recognition method
+- Capture/upload image
+- Click "Recognize Face"
+- View results with confidence score
+
+### 3. Ask AI Questions
+- Go to the "Ask AI" tab
+- Try sample questions or enter custom ones
+- Examples:
+  - "Who was the last person registered?"
+  - "How many people are registered?"
+  - "List all registered people"
+  - "When was John registered?"
+
+### 4. View Registered Faces
+- Go to the "View Faces" tab
+- See all registered faces with timestamps
+
+Architecture Diagram
+![alt text](image.png)
+
 “This project is a part of a hackathon run by https://katomaran.com ”
