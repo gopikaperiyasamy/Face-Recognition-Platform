@@ -1,6 +1,4 @@
-
-# Architecture Diagram
-![alt text](architecturediagram/image.png)
+![alt text](architexture/image.png)
 
 Core Functionalities
 
@@ -150,8 +148,6 @@ Once the backend is running, visit: http://localhost:8000/docs for interactive A
 ### 4. View Registered Faces
 •⁠  ⁠Go to the "View Faces" tab
 •⁠  ⁠See all registered faces with timestamps
-
-
 
 
 “This project is a part of a hackathon run by https://katomaran.com ”
