@@ -96,7 +96,7 @@ Usage Guide
 •⁠ ⁠Go to the "View Faces" tab •⁠ ⁠See all registered faces with timestamps
 
 Architecture Diagram
-(image_relative_path)
+(architecturediagram/image.png)
 
 “This project is a part of a hackathon run by https://katomaran.com ”
 
