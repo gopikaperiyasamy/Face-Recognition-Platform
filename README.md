@@ -101,10 +101,9 @@ python fastapi_backend.py
 # Or using uvicorn directly
 ``` bash
 uvicorn fastapi_backend:app --host 0.0.0.0 --port 8000 --reload
-
-
-The backend will be available at: http://localhost:8000
 ```
+The backend will be available at: http://localhost:8000
+
 ### 2. Start Frontend
 
 # In a new terminal
