@@ -14,15 +14,14 @@ Tech Stack
 
 |---------------------------------------------------------------------|
 
-Module	                                           Technology
-Frontend	                                         Gradio
-Backend	                                           Python Flask
-Face Recognition	                                 Python (⁠ face_recognition ⁠, 
-                                                     ⁠ OpenCV ⁠)
-RAG Engine	                                       Python (⁠ LangChain ⁠, ⁠ Qdrant ⁠, ⁠                                                      OpenAI ⁠)
-Image Storage        	                             MongoDB
-Embedding Storage	                                 Qdrant
-Environment	⁠                                       .env ⁠ (for keys, URIs, config)
+Module	=>  Technology
+Frontend  => Gradio,
+Backend	  =>  Python Flask,
+Face Recognition	  =>  Python (⁠ face_recognition ⁠,⁠ OpenCV ⁠),
+RAG Engine  =>  Python (⁠ LangChain ⁠, ⁠ Qdrant ⁠,OpenAI ⁠),
+Image Storage => MongoDB,
+Embedding Storage	  =>  Qdrant,
+Environment	⁠  =>  .env ⁠ (for keys, URIs, config)
 
 Install Dependencies
 pip install -r requirements.txt
