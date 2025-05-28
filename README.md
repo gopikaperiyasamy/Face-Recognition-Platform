@@ -1,7 +1,7 @@
 # Architexture Diagram :
 ![alt text](architecturediagram/image.png)
 
-Core Functionalities
+## Core Functionalities
 
 •⁠  ⁠Face Registration: Capture and store webcam images with timestamps in MongoDB.
 •⁠  ⁠Face Encoding & Vectorization: Convert facial images into embeddings using a Pickle-based pipeline and store them in Qdrant.
