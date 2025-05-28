@@ -40,12 +40,12 @@
 -----------------------------------------------------------------------
 
  1. Install Dependencies
-
+```bash
 pip install -r requirements.txt
-
+```
 
  2. Install System Dependencies (Linux/Mac)
-
+```bash
 # For face_recognition library
 sudo apt-get install cmake
 sudo apt-get install libopenblas-dev liblapack-dev
@@ -53,10 +53,10 @@ sudo apt-get install libx11-dev libgtk-3-dev
 
 # For OpenCV
 sudo apt-get install python3-opencv
-
+```
  3. Install and Setup MongoDB
 bash
- 
+ ``` bash
 sudo apt-get install mongodb
 
  Start MongoDB service
@@ -66,9 +66,9 @@ sudo systemctl enable mongodb
  Verify MongoDB is running
 mongo --eval "db.adminCommand('listCollections')"
 
-
+```
  4. Install and Setup Qdrant
-bash
+```bash
 # Using Docker (Recommended)
 docker run -p 6333:6333 qdrant/qdrant
 
@@ -78,34 +78,39 @@ cd qdrant
 cargo build --release
 ./target/release/qdrant
 
-
+```
 ### 5. Configure Environment Variables
+``` bash
 Create a .env file in the project root:
 env
 OPENAI_API_KEY=your-openai-api-key-here
 MONGODB_URL=mongodb://localhost:27017/
 QDRANT_URL=localhost
 QDRANT_PORT=6333
-
+```
 
 ## Running the System
 
 ### 1. Start Backend Server
-bash
+
 # Navigate to backend directory
+``` bash
 python fastapi_backend.py
+```
 
 # Or using uvicorn directly
+``` bash
 uvicorn fastapi_backend:app --host 0.0.0.0 --port 8000 --reload
 
 
 The backend will be available at: http://localhost:8000
-
+```
 ### 2. Start Frontend
-bash
-# In a new terminal
-python Ui_frontend.py
 
+# In a new terminal
+``` bash
+python Ui_frontend.py
+```
 
 The frontend will be available at: http://0.0.0.0:7860
 
