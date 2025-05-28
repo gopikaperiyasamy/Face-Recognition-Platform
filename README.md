@@ -15,6 +15,7 @@ Tech Stack
 |---------------------------------------------------------------------|
 
 Module	=>  Technology
+
 Frontend  => Gradio,
 Backend	  =>  Python Flask,
 Face Recognition	  =>  Python (⁠ face_recognition ⁠,⁠ OpenCV ⁠),
