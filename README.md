@@ -25,7 +25,7 @@
 •⁠  ⁠Uses LangChain, Qdrant, and OpenAI to perform semantic search and answer.
 
 
- Tech Stack
+ ### Tech Stack
 
 |---------------------------------------------------------------------|
 | Module            | Technology                                      |
@@ -93,12 +93,12 @@ QDRANT_PORT=6333
 
 ### 1. Start Backend Server
 
-# Navigate to backend directory
+### Navigate to backend directory
 ``` bash
 python fastapi_backend.py
 ```
 
-# Or using uvicorn directly
+### Or using uvicorn directly
 ``` bash
 uvicorn fastapi_backend:app --host 0.0.0.0 --port 8000 --reload
 ```
@@ -106,7 +106,7 @@ The backend will be available at: http://localhost:8000
 
 ### 2. Start Frontend
 
-# In a new terminal
+### In a new terminal
 ``` bash
 python Ui_frontend.py
 ```
