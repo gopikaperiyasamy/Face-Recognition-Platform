@@ -1,3 +1,4 @@
+# Architexture Diagram :
 ![alt text](architecturediagram/image.png)
 
 Core Functionalities
