@@ -1,3 +1,7 @@
+
+# Architecture Diagram
+![alt text](architecturediagram/image.png)
+
 Core Functionalities
 
 •⁠ ⁠Face Registration: Capture and store webcam images with timestamps in MongoDB. •⁠ ⁠Face Encoding & Vectorization: Convert facial images into embeddings using a Pickle-based pipeline and store them in Qdrant. •⁠ ⁠Live Recognition: Stream webcam input and recognize registered faces in real-time. •⁠ ⁠AI Q&A Interface:Ask semantic questions (e.g., "Who was the last registered person?") using LangChain + OpenAI.
@@ -95,8 +99,6 @@ Usage Guide
 4. View Registered Faces
 •⁠ ⁠Go to the "View Faces" tab •⁠ ⁠See all registered faces with timestamps
 
-Architecture Diagram
-![alt text](architecturediagram/image.png)
 
 “This project is a part of a hackathon run by https://katomaran.com ”
 
